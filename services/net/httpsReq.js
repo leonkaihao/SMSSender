@@ -2,6 +2,7 @@
 const https = require('https');
 const querystring = require('querystring');
 
+//httpsReq: to send req by only send and receive js object
 exports.httpsReq = function(options, dataObj, successcb, failcb) {
 
     let agentReq = https.request(options, function (agentRes) {

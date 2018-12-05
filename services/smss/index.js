@@ -3,6 +3,9 @@ const https = require("../net/httpsReq")
 //console.log(process.env.SMS_KEY, process.env.SMS_SECRET);
 
 var sms = exports = module.exports = {
+    //send: send a msg to sms service
+    //param smsObj includes from, to and message
+    //param cb(err, data)
     send: function(smsObj, cb) {
         const options = {
             hostname: "api.transmitsms.com",
