@@ -17,7 +17,7 @@
                 <div class="input-group-append" ng-repeat="rcvr in data.to track by $index">
                     <label class="input-group-text">{{rcvr}}<span class="badge badge-danger" ng-click="DelReceiver($index)">X</span></label>
                 </div>
-                <input type="text" aria-label="To" class="form-control" placeholder="Add phone number here and click 'Add'" ng-model="data.receiver">
+                <input type="text" aria-label="To" class="form-control" placeholder="Add a phone number here and click 'Add'" ng-model="data.receiver">
                 <input type="button" class="input-group-append btn-primary" value="Add" ng-click="AddReceiver()">
             </div>
 
@@ -32,7 +32,7 @@
         <p></p>
         <label>History:</label>
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in history track by $index">
+            <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in historyRev track by $index">
                 {{$index}} {{item}}
             </li>
         </ul>

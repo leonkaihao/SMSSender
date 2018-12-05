@@ -17,6 +17,7 @@ function ($scope, $rootScope, ApiService) {
         receiver: ""
     };
     $scope.history = [];
+    $scope.historyRev = [];
     $scope.AddReceiver = function() {
         if ($scope.data.receiver !== "") {
             $scope.data.to.push($scope.data.receiver);
@@ -26,7 +27,8 @@ function ($scope, $rootScope, ApiService) {
     $scope.DelReceiver = function(index) {
         $scope.data.to.splice(index, 1);
     };
-    $scope.Send = function() {        
+    $scope.Send = function() {
+        $scope.AddReceiver(); 
 		let obj = {
 			params: {
 				token: $rootScope.session.token
@@ -42,8 +44,10 @@ function ($scope, $rootScope, ApiService) {
         
         ApiService.post('/api/smss', obj, function(data) {
             $scope.history.push(JSON.stringify(data.data));
+            $scope.historyRev = $scope.history.reverse();
         }, function(err) {
             $scope.history.push(err.message);
+            $scope.historyRev = $scope.history.reverse();
         });
     };
 }]);
