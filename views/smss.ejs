@@ -17,8 +17,8 @@
                 <div class="input-group-append" ng-repeat="rcvr in data.to track by $index">
                     <label class="input-group-text">{{rcvr}}<span class="badge badge-danger" ng-click="DelReceiver($index)">X</span></label>
                 </div>
-                <input type="text" aria-label="To" class="form-control" ng-model="data.receiver">
-                <input type="button" class="input-group-append" value="Add" ng-click="AddReceiver()">
+                <input type="text" aria-label="To" class="form-control" placeholder="Add phone number here and click 'Add'" ng-model="data.receiver">
+                <input type="button" class="input-group-append btn-primary" value="Add" ng-click="AddReceiver()">
             </div>
 
             <div class="input-group mb-3">
@@ -27,7 +27,7 @@
                 </div>
                 <textarea class="form-control" ng-model="data.message" rows="3"></textarea>
             </div>
-            <button class="btn" type="button" ng-click="Send()">Send</button>
+            <button class="btn btn-primary" type="button" ng-click="Send()">Send</button>
         </form>
         <p></p>
         <label>History:</label>

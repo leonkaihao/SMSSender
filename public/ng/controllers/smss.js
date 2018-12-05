@@ -20,6 +20,7 @@ function ($scope, $rootScope, ApiService) {
     $scope.AddReceiver = function() {
         if ($scope.data.receiver !== "") {
             $scope.data.to.push($scope.data.receiver);
+            $scope.data.receiver = "";
         }
     };   
     $scope.DelReceiver = function(index) {
