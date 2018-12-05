@@ -1,6 +1,6 @@
-var config = require('../config').data;
-//var http = require('http');
-var https = require('https');
+
+const https = require('https');
+const querystring = require('querystring');
 
 exports.httpsReq = function(options, dataObj, successcb, failcb) {
 
@@ -37,9 +37,8 @@ exports.httpsReq = function(options, dataObj, successcb, failcb) {
     agentReq.on('error', function (e) {
         failcb(e.message);
     });
-    if (dataObj) {  
-        let sendData = JSON.stringify(dataObj);
-        //sendData = aesEnc(sendData);
+    if (dataObj) {
+        let sendData = querystring.stringify(dataObj);
         agentReq.write(sendData);
     }
     agentReq.end();
