@@ -30,10 +30,10 @@ root
 ## Mechanism
 1. .env support  
 Using ditenv package to load env var into process. At present we only support SMS_KEY and SMS_SECRET.
-2. session
+2. session  
 I use session to maintain a client connection. If a client idle last more than 1 hour, the corresponding session expires.  
 A session can also store a client's status information.
-3. https api request
+3. https api request  
 According to test, the SMS send request had a body with x-www-form-urlencoded format, not json, but its response is based on json format. So I use querystring to format a js object. 
 
 ## Development environment
