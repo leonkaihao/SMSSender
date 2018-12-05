@@ -3,17 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//config init
+require('dotenv').config();
+
 var indexRouter = require('./routes/index');
 var sessionRouter = require('./routes/sessions');
 var smsRouter = require('./routes/smss');
-//config init
-require('./services/config').load('./.env', function(err) {
-  if (err) {
-      console.error(err);
-      process.exit(1);
-  }
-});
-
 
 //////////////////////////////
 var app = express();
